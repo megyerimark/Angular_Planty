@@ -1,13 +1,27 @@
 
-<h1>Admin Belépés</h1>
+<html lang="en">
+
+  <h1>Admin Belépés</h1>
 
 
-<form class="register" [formGroup]="form" (ngSubmit)="login()">
-  <input type="email" placeholder="email" formControlName="email">
-  <input type="password" placeholder="password" formControlName="password">
 
-  <div class="button mb-3 text-center">
-    <button id="button" class="btn btn-info" type="submit" >Belépés</button>
-  </div>
 
-  </form>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form class="register" [formGroup]="form" (ngSubmit)="login()">
+    <input type="email" placeholder="email" formControlName="email">
+    <input type="password" placeholder="password" formControlName="password">
+
+    <div class="button mb-3 text-center">
+      <button id="button" class="btn btn-info" type="submit" >Belépés</button>
+    </div>
+
+    </form>
+
+</body>
+</html>
