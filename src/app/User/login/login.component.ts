@@ -33,8 +33,6 @@ constructor(
 
       this.auth.login(email,password).subscribe({
         next:data =>{
-          alert(data.data.token);
-          alert(data.data.name);
           if(data.success){
             localStorage.setItem('currentUser', JSON.stringify({token: data.data.token, name: data.data.name}));
             // this.router.navigate(['user/index']);

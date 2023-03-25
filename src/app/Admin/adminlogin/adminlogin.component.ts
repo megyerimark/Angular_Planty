@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { AuthserciveService } from '../Service/authsercive.service';
+import { AuthserciveService } from '../Service/adminauthsercive.service';
 
 @Component({
   selector: 'app-adminlogin',
@@ -28,11 +28,11 @@ constructor(
     });
     }
 
-    login(){
+    alogin(){
       const email = this.form.value.email;
       const password = this.form.value.password;
 
-      this.auth.login(email,password).subscribe({
+      this.auth.alogin(email,password).subscribe({
         next:data =>{
           if(data.success){
             localStorage.setItem('currentUser', JSON.stringify({token: data.data.token, name: data.data.name}));

@@ -11,7 +11,7 @@ export class AuthserciveService {
   constructor( private http:HttpClient) { }
 
 
-  login(email: string, password: string ){
+  alogin(email: string, password: string ){
     let data = {
       email: email,
       password:password
@@ -24,7 +24,7 @@ export class AuthserciveService {
     let httpOption = {
       headers:headers
     };
-    let endpoint  = "loginAdmin";
+    let endpoint  = "adminLog";
     let url = this.host+ endpoint;
     return this.http.post<any>(url,data,httpOption);
   }
@@ -44,7 +44,7 @@ export class AuthserciveService {
     const httpOption= {
       headers:httpHeaders
     }
-    let endpoint = "registerAdmin";
+    let endpoint = "adminReg";
     let url = this.host  + endpoint;
     return this.http.post<any>(url,regdata,httpOption)
   }
