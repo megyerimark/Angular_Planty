@@ -2,14 +2,14 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { AuthserciveService } from '../authsercive.service';
+import { AuthserciveService } from '../Service/authsercive.service';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.scss']
+  selector: 'app-adminregister',
+  templateUrl: './adminregister.component.html',
+  styleUrls: ['./adminregister.component.scss']
 })
-export class RegisterComponent {
+export class AdminregisterComponent {
 
   form!:FormGroup;
   submitted!: boolean;
@@ -56,6 +56,5 @@ constructor(
     });
 
   }
-
 
 }

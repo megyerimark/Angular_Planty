@@ -1,1 +1,13 @@
-<p>login works!</p>
+
+<h1>Belépés</h1>
+
+
+<form class="register" [formGroup]="form" (ngSubmit)="login()">
+  <input type="email" placeholder="email" formControlName="email">
+  <input type="password" placeholder="password" formControlName="password">
+
+  <div class="button mb-3 text-center">
+    <button id="button" class="btn btn-info" type="submit" >Belépés</button>
+  </div>
+
+  </form>
