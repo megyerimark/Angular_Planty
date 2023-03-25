@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { AuthserciveService } from '../Service/adminauthsercive.service';
+import { Adminauthsercive } from '../Service/adminauthsercive.service';
 
 @Component({
   selector: 'app-adminlogin',
@@ -16,7 +16,7 @@ export class AdminloginComponent {
 submitted!: boolean;
 
 constructor(
-  private auth: AuthserciveService,
+  private auth: Adminauthsercive,
   private formBuilder: FormBuilder,
   private router: Router,
   private toastr: ToastrService) { }

@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthserciveService {
+export class Adminauthsercive {
 
   host ="http://localhost:8000/api/";
 
