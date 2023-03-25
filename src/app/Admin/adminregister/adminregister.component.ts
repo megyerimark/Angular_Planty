@@ -46,7 +46,7 @@ constructor(
        next : data =>{
         this.toastr.success("Sikeres regisztráció")
         localStorage.setItem('newAuthData', JSON.stringify(data));
-        this.router.navigate(['user/login']);
+        this.router.navigate(['admin/login']);
        },
 
        error: err => {
