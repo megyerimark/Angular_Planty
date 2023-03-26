@@ -12,6 +12,7 @@ import { RegisterComponent } from './User/register/register.component';
 import { AdminregisterComponent } from './Admin/adminregister/adminregister.component';
 import { AdminloginComponent } from './Admin/adminlogin/adminlogin.component';
 import { AdminindexComponent } from './Admin/adminindex/adminindex.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AdminindexComponent } from './Admin/adminindex/adminindex.component';
     RegisterComponent,
     AdminregisterComponent,
     AdminloginComponent,
-    AdminindexComponent
+    AdminindexComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

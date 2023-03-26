@@ -36,7 +36,7 @@ constructor(
         next:data =>{
           if(data.success){
             localStorage.setItem('currentUser', JSON.stringify({token: data.data.token, name: data.data.name}));
-            //this.router.navigate(['admin/index']);
+            this.router.navigate(['admin/index']);
             this.toastr.success('Sikeres belépés')
           }else{
             this.toastr.error("sikertelen belépés");

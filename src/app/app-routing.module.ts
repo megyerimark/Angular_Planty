@@ -3,13 +3,15 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminindexComponent } from './Admin/adminindex/adminindex.component';
 import { AdminloginComponent } from './Admin/adminlogin/adminlogin.component';
 import { AdminregisterComponent } from './Admin/adminregister/adminregister.component';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './User/login/login.component';
 import { RegisterComponent } from './User/register/register.component';
 
 const routes: Routes = [
   {path:"user/login", component:LoginComponent},
   {path:"user/register", component:RegisterComponent},
-  {path:"", component:LoginComponent},
+  {path:"", component:HomeComponent},
 
 
   {path:"admin/login", component:AdminloginComponent},

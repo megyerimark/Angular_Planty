@@ -1,17 +1,19 @@
-<h1>Regisztáricó</h1>
+<div class="content">
+  <h1>Regisztáricó</h1>
 
 
 
-<form class="register" [formGroup]="form" (ngSubmit)="register()">
+  <form class="register" [formGroup]="form" (ngSubmit)="register()">
 
-<input type="text" placeholder="név" formControlName="name">
-<input type="email" placeholder="email" formControlName="email">
-<input type="password" placeholder="password" formControlName="password">
-<input type="password" placeholder="pass" formControlName="confirm_password">
+  <input type="text" placeholder="név" formControlName="name">
+  <input type="email" placeholder="email" formControlName="email">
+  <input type="password" placeholder="password" formControlName="password">
+  <input type="password" placeholder="pass" formControlName="confirm_password">
 
-<div class="button mb-3 text-center">
-  <button id="button" class="btn btn-info" type="submit" >Regisztráció</button>
+  <div class="button mb-3 text-center">
+    <button id="button" class="btn btn-info" type="submit" >Regisztráció</button>
+  </div>
+
+  </form>
 </div>
-
-</form>
 
