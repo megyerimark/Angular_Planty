@@ -1,1 +1,21 @@
-<router-outlet></router-outlet>
+
+
+<nav class="navbar navbar-expand-lg navbar-light" >
+    <div class="container-fluid">
+      <a class="navbar-brand "  routerLink="/home">Hamarosan</a>
+      <button class="navbar-toggler"  (click)="home()" type="button" data-bs-toggle="collapse"  aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup" [ngClass]="{'show':homer}">
+        <div class="navbar-nav">
+          <a class="nav-link active py-4" aria-current="page" routerLink="/home">Főoldal</a>
+          <a class="nav-link active py-4" aria-current="page" routerLink="/user/register">Regisztráció</a>
+          <a class="nav-link active py-4"  aria-current="page"  routerLink="/user/login">Bejelentkezés</a>
+      
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+  

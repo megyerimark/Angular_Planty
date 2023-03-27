@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Angular_Planty';
+  homer= false;
+
+  home(){
+  this.homer = !this.homer;
+  }
+ show(){
+
+ }
 }

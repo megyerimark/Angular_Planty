@@ -6,13 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  homer= false;
 
-  home(){
-  this.homer = !this.homer;
-  }
- show(){
-
- }
 
 }

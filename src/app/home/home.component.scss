@@ -1,5 +1,5 @@
 
-// @import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
 *{
   margin: 0;
   padding: 0;
@@ -92,4 +92,8 @@ footer .set div:nth-child(6){
     top: 110%;
     transform:  translateX(-20px) rotate(225deg);
   }
+}
+body
+{
+  background: url("/assets/images/trees.jpg");
 }
