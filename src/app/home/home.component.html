@@ -1,23 +1,40 @@
-<div class="hero">
-  <div class="navbar">
-    <img src="/assets/images/falev.jpg" alt="" class="logo">
-    <button type="button"> Belépés</button>
+
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler"  (click)="home()" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup" [ngClass]="{'show':homer}">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="#">Home</a>
+        <a class="nav-link" routerLink="user/register">Regisztráció</a>
+        <a class="nav-link" href="#">Pricing</a>
+        <a class="nav-link disabled">Disabled</a>
+      </div>
+    </div>
   </div>
-  <div class="content">
-    <small>Szia </small>
-    <h1>Szia megint</h1>
-    <button type="button">Regisztráció</button>
-  </div>
-  <div class="leafs">
-    <img src="/assets/images/fas.jpg">
-    <img src="/assets/images/fas.jpg">
-    <img src="/assets/images/fas.jpg">
-    <img src="/assets/images/fas.jpg">
-    <img src="/assets/images/fas.jpg">
-    <img src="/assets/images/fas.jpg">
-    <img src="/assets/images/fas.jpg">
-  </div>
+</nav>
 
 
 
-</div>
+<footer>
+  <h2>PlanTy</h2>
+  <div class="set">
+    <div class=""><img src="http://clipart-library.com/images/6cp5Gq5di.png " height="115px" ></div>
+    <div class=""><img src="http://clipart-library.com/images_k/falling-leaves-transparent-background/falling-leaves-transparent-background-22.png " height="115px" ></div>
+    <div class=""><img src="http://clipart-library.com/images_k/fall-leaf-transparent-background/fall-leaf-transparent-background-1.png " height="115px" ></div>
+    <div class=""><img src="http://clipart-library.com/images/6cp5Gq5di.png "height="75px" ></div>
+    <div class=""><img src="http://clipart-library.com/images_k/fall-leaf-transparent-background/fall-leaf-transparent-background-1.png" height="115px"></div>
+    <div class=""><img src="http://clipart-library.com/newimages/fall-leaves-clip-art-34.png" height="115px"></div>
+  </div>
+</footer>
+<body>
+</body>
+</html>

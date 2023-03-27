@@ -1,121 +1,95 @@
+
+// @import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
 *{
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  box-sizing: border-box;
+  font-family: 'Alkatra', cursive;
+}
+footer{
+position: relative;
+width:100%;
+height: 100vh;
+background: url("/assets/images/trees.jpg");
+background-repeat: no-repeat;
+overflow: hidden;
+display: flex;
+justify-content: center;
+align-items: center;
 
 }
-
-.hero{
-  width: 100%;
-  height: 100vh;
-  background: url('/assets/images/fa.jpg') ;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-  overflow: hidden;
-  background-position: center;
-
-
-
-}
-.logo{
-  width: 100px;
-  cursor: pointer;
-}
-
-.navbar{
-  width: 85%;
-  height: 15%;
-  margin: auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-button{
+footer h2{
   color: white;
-  padding: 10px 25px;
-  background: transparent;
-  border: 1px solid #fff;
-  border-radius: 20px;
-  outline: none;
-  cursor: pointer;
+  font-size: 8em;
+  text-transform: uppercase;
 }
-.content {
-  color: white;
+footer .set{
   position: absolute;
-  top: 50%;
-  left: 8%;
-  transform: translateY(-50%);
-  z-index: 2;
-}
-h1{
-  font-size: 80px;
-  margin:10px 0 30px ;
-}
-
-.side-bar{
-  width: 50px;
-  height: 100vh;
-  background: linear-gradient(green);
-  position:absolute;
-  right: 0;
+  width: 100%;
+  height: 100%;
   top: 0;
+  left: 0;
+  pointer-events: none;
 }
-.leafs img{
-  width: 50px;
-  animation: leaf 7s linear infinite;
-
-}
-.leafs{
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+footer .set div{
   position: absolute;
-  bottom: 600px;
+  display: block;
+}
+footer .set div:nth-child(1){
+  left :20%;
+  animation:  leafs 15s linear infinite;
+  animation-delay: -7s;
+}
+footer .set div:nth-child(2){
+  left :40%;
+  animation:  leafs 18s linear infinite;
+  animation-delay: -15s;
+}
+footer .set div:nth-child(3){
+  left :60%;
+  animation:  leafs 18s linear infinite;
+  animation-delay: -15s;
+}
+footer .set div:nth-child(4){
+  left :75%;
+  animation:  leafs 15s linear infinite;
+  animation-delay: -7s;
+}
+footer .set div:nth-child(5){
+  left :70%;
+  animation:  leafs 10s linear infinite;
+  animation-delay: -12s;
+}
+footer .set div:nth-child(6){
+  left :10%;
+  animation:  leafs 18s linear infinite;
 
 }
-@keyframes leaf {
-  0%{
-    transform: translateY(0);
-    opacity: 0;
-  }
-  50%{
-    opacity: 1;
-  }
-  70%{
 
+
+@keyframes leafs {
+  0%{
+    opacity: 0;
+    top: -10%;
+    transform: translateX(20px) rotate(0deg);
+  }
+  10%{
     opacity: 1;
+  }
+  20%{
+    transform:  translateX(-20px) rotate(45deg);
+  }
+  40%{
+    transform:  translateX(-20px) rotate(90deg);
+  }
+  60%{
+    transform:  translateX(-20px) rotate(90deg);
+  }
+  80%{
+    transform:  translateX(-20px) rotate(90deg);
   }
   100%{
-    transform: translateY(80vh);
-    opacity: 0;
+    top: 110%;
+    transform:  translateX(-20px) rotate(225deg);
   }
-
-
-}
-.leafs img:nth-child(1){
-  animation-delay: 2s;
-  width: 25px;
-}
-.leafs img:nth-child(2){
-  animation-delay: 2s;
-  width: 25px;
-}
-.leafs img:nth-child(3){
-  animation-delay: 3s;
-}
-.leafs img:nth-child(4){
-  animation-delay: 4.5s;
-}
-.leafs img:nth-child(5){
-  animation-delay: 3s;
-  width: 15px;
-}
-.leafs img:nth-child(6){
-  animation-delay: 6s;
-}
-.leafs img:nth-child(7){
-  animation-delay: 7s;
-  width: 35px;
 }
