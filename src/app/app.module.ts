@@ -13,6 +13,7 @@ import { AdminregisterComponent } from './Admin/adminregister/adminregister.comp
 import { AdminloginComponent } from './Admin/adminlogin/adminlogin.component';
 import { AdminindexComponent } from './Admin/adminindex/adminindex.component';
 import { HomeComponent } from './home/home.component';
+import { IndexComponent } from './User/index/index.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HomeComponent } from './home/home.component';
     AdminregisterComponent,
     AdminloginComponent,
     AdminindexComponent,
-    HomeComponent
+    HomeComponent,
+    IndexComponent
   ],
   imports: [
     BrowserModule,
