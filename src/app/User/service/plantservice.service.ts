@@ -22,7 +22,7 @@ export class PlantserviceService  {
     let httpOption = {
       headers: headers
     };
-    return this.http.get<any>(this.host, httpOption);
+    return this.http.get<any>(this.host+"myplants", httpOption);
     
   };
   addPlants(token:string, plant_id:any){

@@ -17,12 +17,12 @@ export class IndexComponent implements OnInit{
     private formBuilder: FormBuilder){}
 
     ngOnInit(): void {
-       this.index();
-      // this.plantForm = this.formBuilder.group({
-      //   plant_id :[],
+       this.plantindex();
+      this.plantForm = this.formBuilder.group({
+        plant_id :[],
     
    
-      // })
+      })
   
 
      }
@@ -32,7 +32,7 @@ export class IndexComponent implements OnInit{
 
 
     
-     index(){
+     plantindex(){
       let jsonUserData: any = localStorage.getItem('currentUser');
       let currentUser = JSON.parse(jsonUserData);
       this.plantservic.index(currentUser.token).subscribe({
@@ -45,22 +45,22 @@ export class IndexComponent implements OnInit{
       });
     }
 
-    // addplant(){
-    //   let jsonUserData: any = localStorage.getItem('currentUser');
-    //   let currentUser = JSON.parse(jsonUserData);
-    //   let plant_id =
-    //  this.plantForm.value.plant_id;
+    addplant(){
+      let jsonUserData: any = localStorage.getItem('currentUser');
+      let currentUser = JSON.parse(jsonUserData);
+      let plant_id =
+     this.plantForm.value.plant_id;
     
 
-    //   this.plantservic.addPlants(plant_id, currentUser.token).subscribe({
-    //     next: res => {
-    //       console.log(res);
-    //       this.index();
-    //     }
+      this.plantservic.addPlants(plant_id, currentUser.token).subscribe({
+        next: res => {
+          console.log(res);
+          this.plantindex();
+        }
 
-    //   })
+      })
   
 
-    // }
+    }
   
 }

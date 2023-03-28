@@ -1,1 +1,6 @@
-<p>adminindex works!</p>
+<table *ngFor = 'let plant of plants' >
+    <td>{{plant.id}}</td>
+    <td>{{plant.name}}</td>
+    <td><img [src]='"http://localhost:8000/storage/"+plant.imgpath' alt=""></td>
+    <td></td>
+</table>
