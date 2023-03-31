@@ -29,20 +29,29 @@ constructor(
     }
 
     alogin(){
-      const email = this.form.value.email;
-      const password = this.form.value.password;
+      let email = this.form.value.email;
+      let password = this.form.value.password;
 
       this.auth.alogin(email,password).subscribe({
-        next:data =>{
-          if(data.success){
-            localStorage.setItem('currentUser', JSON.stringify({token: data.data.token, name: data.data.name}));
+        next:res =>{
+          if(res.success){
+            localStorage.setItem('currentAdmin',
+             JSON.stringify({token: res.data.token, name: res.data.name}));
             this.router.navigate(['admin/index']);
             this.toastr.success('Sikeres belépés')
-            this.toastr.success(data.data.token);
+
           }else{
             this.toastr.error("sikertelen belépés");
           }
         }
       });
+    }
+
+    logout(){
+      this.auth.logout();
+      this.toastr.success('Sikeres kijelentkezés');
+      this.router.navigate(['admin/login']);
+
+
     }
 }

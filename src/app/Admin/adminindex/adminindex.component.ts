@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PlantserviceService } from '../Service/plantservice.service';
 import { ToastrService } from 'ngx-toastr';
+import { Adminauthsercive } from '../Service/adminauthsercive.service';
 
 @Component({
   selector: 'app-adminindex',
@@ -12,10 +13,15 @@ import { ToastrService } from 'ngx-toastr';
 export class AdminindexComponent  implements OnInit{
 
 
-  constructor( private plantserv:PlantserviceService,
-    router :Router,
+
+
+  constructor(
+    private auth:Adminauthsercive,
+     private plantserv:PlantserviceService,
+    private router :Router,
     private formBuild:FormBuilder,
-    private toastr: ToastrService){
+    private toastr: ToastrService,
+   ){
 
   }
   plantForm!:FormGroup;
@@ -41,6 +47,7 @@ export class AdminindexComponent  implements OnInit{
     });
 
   }
+
 
 
   index(){
@@ -87,10 +94,14 @@ export class AdminindexComponent  implements OnInit{
 
     });
 
-
-
+}
+logout(){
+  this.auth.logout();
+  this.toastr.success('Sikeres kijelentkezés');
+  this.router.navigate(['admin/login']);
 
 }
+
 }
 
 

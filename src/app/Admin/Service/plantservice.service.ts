@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PlantserviceService {
-  [x: string]: any;
+ 
   host = 'http://localhost:8000/api/';
   constructor(private http: HttpClient) { }
 

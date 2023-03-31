@@ -45,7 +45,7 @@ constructor(
     this.auth.register( name, email,password,confirm_password).subscribe({
        next : data =>{
         this.toastr.success("Sikeres regisztráció")
-        localStorage.setItem('newAuthData', JSON.stringify(data));
+        localStorage.setItem('newAuthAdminData', JSON.stringify(data));
         this.router.navigate(['admin/login']);
        },
 
