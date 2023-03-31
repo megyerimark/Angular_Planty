@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PlantserviceService {
- 
+
   host = 'http://localhost:8000/api/';
   constructor(private http: HttpClient) { }
 
@@ -24,12 +24,12 @@ export class PlantserviceService {
 
 
 
-store(plant:any, token:string ){
+store (token:string ,formData:any){
 
 
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      // 'Accept': 'application/json',
+      // 'Accept':' text/html, image/gif, image/jpeg',
       'Authorization': 'Bearer ' + token
     });
     let httpOption= {
@@ -38,7 +38,7 @@ store(plant:any, token:string ){
     let endpoint = "plant";
     let url = this.host + endpoint;
 
-    return this.http.post<any>(url, plant, httpOption)
+    return this.http.post<any>(url, formData, httpOption)
 
   }
 
