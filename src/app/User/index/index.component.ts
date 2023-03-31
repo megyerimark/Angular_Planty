@@ -20,10 +20,10 @@ export class IndexComponent implements OnInit{
        this.plantindex();
       this.plantForm = this.formBuilder.group({
         plant_id :[],
-    
-   
+
+
       })
-  
+
 
      }
      plantForm!:FormGroup;
@@ -31,7 +31,7 @@ export class IndexComponent implements OnInit{
      plants!:any;
 
 
-    
+
      plantindex(){
       let jsonUserData: any = localStorage.getItem('currentUser');
       let currentUser = JSON.parse(jsonUserData);
@@ -39,8 +39,8 @@ export class IndexComponent implements OnInit{
         next:res=>{
           this.plants = res;
           console.log(this.plants);
-  
-        
+
+
         }
       });
     }
@@ -50,7 +50,7 @@ export class IndexComponent implements OnInit{
       let currentUser = JSON.parse(jsonUserData);
       let plant_id =
      this.plantForm.value.plant_id;
-    
+
 
       this.plantservic.addPlants(plant_id, currentUser.token).subscribe({
         next: res => {
@@ -59,8 +59,8 @@ export class IndexComponent implements OnInit{
         }
 
       })
-  
+
 
     }
-  
+
 }

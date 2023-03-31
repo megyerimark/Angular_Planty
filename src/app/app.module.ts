@@ -24,7 +24,8 @@ import { IndexComponent } from './User/index/index.component';
     AdminloginComponent,
     AdminindexComponent,
     HomeComponent,
-    IndexComponent
+    IndexComponent,
+   
   ],
   imports: [
     BrowserModule,

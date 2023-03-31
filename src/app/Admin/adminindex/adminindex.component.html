@@ -1,6 +1,32 @@
+
+
+<form class="create" [formGroup]="plantForm"  (ngSubmit)="store()">
+
+  <input type="text" placeholder="név" formControlName="name">
+  <input type="file" placeholder="kép" formControlName="imgpath">
+  <input type="text" placeholder="leírás" formControlName="description">
+  <input type="text" placeholder="locsolás cigány" formControlName="watering">
+  <input type="text" placeholder="hőmérséklet" formControlName="temperature">
+  <input type="text" placeholder="fényigény " formControlName="light_requirement">
+  <input type="text" placeholder="páratartalom " formControlName="humidity">
+  <input type="text" placeholder="fasz " formControlName="heat_demand">
+
+
+  <div class="button mb-3 text-center">
+    <button id="button" class="btn btn-info" type="submit" >Felvétel</button>
+  </div>
+
+  </form>
+
+
 <table *ngFor = 'let plant of plants' >
     <td>{{plant.id}}</td>
     <td>{{plant.name}}</td>
-    <td><img [src]='"http://localhost:8000/storage/"+plant.imgpath' alt=""></td>
+    <td><img [src]='"http://localhost:8000/storage/images/"+plant.imgpath' alt=""></td>
     <td></td>
 </table>
+
+
+
+
+

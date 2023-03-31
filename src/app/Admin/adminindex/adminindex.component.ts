@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PlantserviceService } from '../Service/plantservice.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-adminindex',
@@ -10,20 +11,37 @@ import { PlantserviceService } from '../Service/plantservice.service';
 })
 export class AdminindexComponent  implements OnInit{
 
+
   constructor( private plantserv:PlantserviceService,
     router :Router,
-    private formBuild:FormBuilder){
+    private formBuild:FormBuilder,
+    private toastr: ToastrService){
 
   }
+  plantForm!:FormGroup;
+  plants:any;
+  data:any;
 
 
 
   ngOnInit(): void {
     this.index();
-   
+
+
+    this.plantForm = this.formBuild.group({
+      name:['', Validators.required],
+      imgpath:['', Validators.required],
+      description:['', Validators.required],
+      watering:['', Validators.required],
+      temperature:['', Validators.required],
+      light_requirement:['', Validators.required],
+      humidity:['', Validators.required],
+      heat_demand:['', Validators.required],
+
+    });
+
   }
-  plantForm!:FormGroup;
-  plants:any;
+
 
   index(){
     let jsonUserData: any = localStorage.getItem('currentUser');
@@ -31,11 +49,48 @@ export class AdminindexComponent  implements OnInit{
     this.plantserv.index(currentUser.token).subscribe({
       next:res=>{
         this.plants = res;
-        
-     
       }
     });
   }
 
 
+  store(){
+    let jsonUserData: any = localStorage.getItem('currentUser');
+    let currentUser = JSON.parse(jsonUserData);
+
+      const name = this.plantForm.value.name;
+    const  imgpath  = this.plantForm.value.imgpath;
+   const  description = this.plantForm.value.description;
+   const watering = this.plantForm.value.watering;
+   const  temperature =  this.plantForm.value.temperature;
+    const light_requirement =  this.plantForm.value.light_requirement;
+   const humidity = this.plantForm.value.humidity;
+  const  heat_demand =  this.plantForm.value.heat_demand;
+
+
+
+
+    this.plantserv.store(name, imgpath, description,
+      watering, temperature
+      ,light_requirement,
+      humidity,
+      heat_demand, currentUser.token).subscribe({
+
+      next : data =>{
+        this.toastr.success("Sikeres felvétel")
+        localStorage.setItem('newAuthData', JSON.stringify(data));
+       },
+
+       error: err => {
+        this.toastr.error('Hiba!A felvétel sikertelen !');
+      }
+
+    });
+
+
+
+
 }
+}
+
+
