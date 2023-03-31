@@ -62,39 +62,26 @@ export class AdminindexComponent  implements OnInit{
 
 
   store(){
-    let jsonUserData: any = localStorage.getItem('currentUser');
-    let currentUser = JSON.parse(jsonUserData);
-
-      const name = this.plantForm.value.name;
-    const  imgpath  = this.plantForm.value.imgpath;
-   const  description = this.plantForm.value.description;
-   const watering = this.plantForm.value.watering;
-   const  temperature =  this.plantForm.value.temperature;
-    const light_requirement =  this.plantForm.value.light_requirement;
-   const humidity = this.plantForm.value.humidity;
-  const  heat_demand =  this.plantForm.value.heat_demand;
-
-
-
-
-    this.plantserv.store(name, imgpath, description,
-      watering, temperature
-      ,light_requirement,
-      humidity,
-      heat_demand, currentUser.token).subscribe({
-
-      next : data =>{
-        this.toastr.success("Sikeres felvétel")
-        localStorage.setItem('newAuthData', JSON.stringify(data));
-       },
-
-       error: err => {
-        this.toastr.error('Hiba!A felvétel sikertelen !');
+    let jsonCurrentUser: any = localStorage.getItem("currentUser");
+    let currentUser = JSON.parse(jsonCurrentUser);
+    let plant ={
+      name: this.plantForm.value.name,
+      imgpath:  this.plantForm.value.imgpath,
+      description:  this.plantForm.value.description,
+      watering:  this.plantForm.value.watering,
+      temperature:  this.plantForm.value.temperature,
+      light_requirement: this.plantForm.value.light_requirement,
+      humidity: this.plantForm.value.humidity,
+      heat_demand: this.plantForm.value.heat_demand
+    }
+    this.plantserv.store(plant, currentUser.token).subscribe({
+      next:res=>{
+        console.log('sikeres feltöltés')
+        // 
       }
-
-    });
-
-}
+    })
+  }
+  
 logout(){
   this.auth.logout();
   this.toastr.success('Sikeres kijelentkezés');

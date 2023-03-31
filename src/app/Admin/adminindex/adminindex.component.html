@@ -3,13 +3,13 @@
 <form class="create" [formGroup]="plantForm"  (ngSubmit)="store()">
 
   <input type="text" placeholder="név" formControlName="name">
-  <input type="file" placeholder="kép" formControlName="imgpath">
+  <input type="text" placeholder="kép" formControlName="imgpath">
   <input type="text" placeholder="leírás" formControlName="description">
   <input type="text" placeholder="locsolás cigány" formControlName="watering">
   <input type="text" placeholder="hőmérséklet" formControlName="temperature">
   <input type="text" placeholder="fényigény " formControlName="light_requirement">
   <input type="text" placeholder="páratartalom " formControlName="humidity">
-  <input type="text" placeholder="fasz " formControlName="heat_demand">
+  <input type="number" placeholder="fasz " formControlName="heat_demand">
 
 
   <div class="button mb-3 text-center">
