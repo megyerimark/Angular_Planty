@@ -2,7 +2,7 @@
 
 
 
-  <form action="" [formGroup]="plantForm" (ngSubmit)="uploadFile()">
+  <form [formGroup]="plantForm" (ngSubmit)="uploadFile()">
     <input type="file" (change)="onFileChange($event)"  formControlName="imgpath" class="form-control">
     <input type="text" placeholder="név" formControlName="name" class="form-control" >
 

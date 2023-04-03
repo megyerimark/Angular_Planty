@@ -9,7 +9,7 @@ export class PlantserviceService {
   host = 'http://localhost:8000/api/';
   constructor(private http: HttpClient) { }
 
-  index(token:string){
+  index(token: string) {
     let headers = new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': 'Bearer ' + token
@@ -18,28 +18,27 @@ export class PlantserviceService {
     let httpOption = {
       headers: headers
     };
-    return this.http.get<any>(this.host+"plants", httpOption);
+    return this.http.get<any>(this.host + "plants", httpOption);
 
   };
 
 
 
-store (token:string ,formData:any){
 
 
+  store(token: string, formData: FormData) {
     let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      // 'Accept':' text/html, image/gif, image/jpeg',
       'Authorization': 'Bearer ' + token
     });
-    let httpOption= {
-      headers:headers
+    let httpOptions = {
+      headers: headers
     }
     let endpoint = "plant";
     let url = this.host + endpoint;
-
-    return this.http.post<any>(url, formData, httpOption)
-
+    return this.http.post<any>(url, formData, httpOptions);
   }
-
 }
+
+
+
+
