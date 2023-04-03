@@ -1,17 +1,48 @@
-<h1>Admin regisztárció </h1>
 
 
 
-<form class="register" [formGroup]="form" (ngSubmit)="register()">
+<footer>
 
-<input type="text" placeholder="név" formControlName="name">
-<input type="email" placeholder="email" formControlName="email">
-<input type="password" placeholder="password" formControlName="password">
-<input type="password" placeholder="pass" formControlName="confirm_password">
+  <form class="register" [formGroup]="form" (ngSubmit)="register()">
+    <h1>Admin regisztárció </h1>
 
-<div class="button mb-3 text-center">
-  <button id="button" class="btn btn-info" type="submit" >Regisztráció</button>
-</div>
+    <div class="container">
+      <div class="name">
+        <label for="">Név</label>
+        <input type="text"  placeholder="Teljes neved"   formControlName="name">
+      </div>
+      <div class="email">
+        <label for="">Email</label>
+      <input type="email"  placeholder="Email" formControlName="email">
+      </div>
+      <div class="password">
+        <label for="">Jelszó</label>
+      <input type="password"    placeholder="jelszó" formControlName="password">
+      </div>
+      <div class="password_2">
+        <label for="">Jelszó megerősítő</label>
+      <input type="password"   placeholder="Jelszó megerősítő" formControlName="confirm_password">
+      </div>
+      <div class="btn">
+        <button type="submit" class="btn   px-5 py-2">Regisztráció</button>
+        <a routerLink="/admin/login">
+          <label for="" class="px-5">Van már fiókod? lépj be!</label>
+        </a>
+      </div>
+    </div>
+    </form>
 
-</form>
+  <div class="set">
+    <div class=""><img src="http://clipart-library.com/images/6cp5Gq5di.png " height="115px" ></div>
+    <div class=""><img src="http://clipart-library.com/images_k/falling-leaves-transparent-background/falling-leaves-transparent-background-22.png " height="115px" ></div>
+    <div class=""><img src="http://clipart-library.com/images_k/fall-leaf-transparent-background/fall-leaf-transparent-background-1.png " height="115px" ></div>
+    <div class=""><img src="http://clipart-library.com/images/6cp5Gq5di.png "height="75px" ></div>
+    <div class=""><img src="http://clipart-library.com/images_k/fall-leaf-transparent-background/fall-leaf-transparent-background-1.png" height="115px"></div>
+    <div class=""><img src="http://clipart-library.com/newimages/fall-leaves-clip-art-34.png" height="115px"></div>
+  </div>
+
+</footer>
+
+
+
 

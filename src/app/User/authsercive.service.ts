@@ -10,7 +10,7 @@ export class AuthserciveService {
 
   host = 'http://localhost:8000/api/';
 
-  
+
   constructor( private http:HttpClient) { }
 
 
@@ -58,20 +58,35 @@ export class AuthserciveService {
 
 
 
-  logout(email:string, token:string){
-    let data = {
-      name:email,
-      token:token
+
+  logout(){
+    if(localStorage.getItem('currentUser') === null){
+      return;
     }
-    let headers = new HttpHeaders({
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + token
-    });
-    let httpOption = {
-      headers:headers
-    };
-    let endpoint = "logout";
+    let data:any = localStorage.getItem('currentUser');
+    localStorage.removeItem('currentUser');
+    let currentUser = JSON.parse(data);
+    let token = currentUser.token;
+    let httpHeaders = new HttpHeaders();
+    httpHeaders.set('Content-Type', 'application/json');
+
+    const httpOptions = {
+      headers: httpHeaders
+    }
+    let endpoint = 'logout';
     let url = this.host + endpoint;
-    return this.http.post<any>(url, data, httpOption);
+    return this.http.post<any>(url, httpOptions);
+}
+
+
+
+  isLoggedIn(){
+    if(localStorage.getItem('currentUser') === null){
+      return false;
+    }
+    let data:any = localStorage.getItem('currentUser');
+    let userData = JSON.parse(data);
+    let token = userData.token;
+    return token;
   }
 }

@@ -1,27 +1,43 @@
 
-<html lang="en">
 
-  <h1>Admin Belépés</h1>
-
+<footer>
 
 
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
   <form class="register" [formGroup]="form" (ngSubmit)="alogin()">
-    <input type="email" placeholder="email" formControlName="email">
-    <input type="password" placeholder="password" formControlName="password">
+    <h1>Admin</h1>
 
-    <div class="button mb-3 text-center">
-      <button id="button" class="btn btn-info" type="submit" >Belépés</button>
+    <div class="container">
+      <div class="email">
+        <label for="">Email</label>
+        <input type="email"  placeholder="email" formControlName="email">
+        </div>
+        <div class="password">
+          <label for="">Jelszó</label>
+          <input type="password"  placeholder="Jelszó"   formControlName="password">
+          </div>
+          <div class="btn">
+          <button type="submit">Belépés</button>
+          </div>
     </div>
+
+
 
     </form>
 
-</body>
-</html>
+
+
+
+
+
+    <div class="set">
+      <div class=""><img src="http://clipart-library.com/images/6cp5Gq5di.png " height="115px" ></div>
+      <div class=""><img src="http://clipart-library.com/images_k/falling-leaves-transparent-background/falling-leaves-transparent-background-22.png " height="115px" ></div>
+      <div class=""><img src="http://clipart-library.com/images_k/fall-leaf-transparent-background/fall-leaf-transparent-background-1.png " height="115px" ></div>
+      <div class=""><img src="http://clipart-library.com/images/6cp5Gq5di.png "height="75px" ></div>
+      <div class=""><img src="http://clipart-library.com/images_k/fall-leaf-transparent-background/fall-leaf-transparent-background-1.png" height="115px"></div>
+      <div class=""><img src="http://clipart-library.com/newimages/fall-leaves-clip-art-34.png" height="115px"></div>
+    </div>
+
+  </footer>
+
+

@@ -2,6 +2,8 @@ import { Component,OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { PlantserviceService } from '../service/plantservice.service';
+import { ToastrService } from 'ngx-toastr';
+import { AuthserciveService } from '../authsercive.service';
 
 @Component({
   selector: 'app-index',
@@ -9,12 +11,14 @@ import { PlantserviceService } from '../service/plantservice.service';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit{
+  [x: string]: any;
 
 
 
   constructor(private plantservic:PlantserviceService,
     private router:Router,
-    private formBuilder: FormBuilder){}
+    private formBuilder: FormBuilder , private toastr:ToastrService,
+    private auth:AuthserciveService){}
 
     ngOnInit(): void {
        this.plantindex();
@@ -60,6 +64,14 @@ export class IndexComponent implements OnInit{
 
       })
 
+
+    }
+
+
+    logout(){
+      this.auth.logout();
+      this.toastr.success('Sikeres kijelentkezés');
+      this.router.navigate(['user/login']);
 
     }
 

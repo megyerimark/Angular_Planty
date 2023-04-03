@@ -12,8 +12,12 @@
 </div>
 
 <table *ngFor = 'let plant of plants' >
-    <td>{{plant.id}}</td>
+  <td><img [src]='"http://localhost:8000/storage/images/"+plant.imgpath' alt="" class="form-control"></td>
     <td></td>
     <td></td>
     <td></td>
 </table>
+
+<li class="nav-item">
+  <a class="nav-link "  (click)="logout()"> <h1>Kijelentkezés</h1></a>
+</li>

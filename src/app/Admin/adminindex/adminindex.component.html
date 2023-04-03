@@ -1,6 +1,42 @@
 
 
 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="container" *ngFor = 'let plant of plants' >
+    <div class="card">
+      <div class="imgBx" >
+        <img [src]='"http://localhost:8000/storage/images/"+plant.imgpath' alt=""  >
+      </div>
+      <div class="content">
+        <h1>{{plant.name}}</h1>
+        <p>{{plant.description}}</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis esse, consequuntur quisquam ratione labore doloribus quae non mollitia eos dicta.</p>
+        <a href="#">Olvass tovább</a>
+        <!-- ide jöhetne egy index az összes növényről  -->
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+</body>
+</html>
+
+
+<!--
+
+
 
   <form [formGroup]="plantForm" (ngSubmit)="uploadFile()">
     <input type="file" (change)="onFileChange($event)"  formControlName="imgpath" class="form-control">
@@ -24,13 +60,19 @@
   </li>
 
 
+  <div class="container">
+    <div class="card">
+      <div class="imgBx"></div>
+      <div class="content"></div>
+    </div>
+  </div>
+
+
 
 <table *ngFor = 'let plant of plants' >
-    <td>{{plant.light_requirement}}</td>
-    <td>{{plant.name}}</td>
-    <td><img [src]='"http://localhost:8000/storage/images/"+plant.imgpath' alt="" class="form-control"></td>
-    <td></td>
-</table>
+   <img [src]='"http://localhost:8000/storage/images/"+plant.imgpath' alt="" class="form-control"></td>
+
+</table> -->
 
 
 

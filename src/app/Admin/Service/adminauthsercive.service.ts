@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class Adminauthsercive {
+  isAuthenticated() {
+    throw new Error('Method not implemented.');
+  }
 
   host ="http://localhost:8000/api/";
 

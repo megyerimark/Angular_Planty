@@ -8,19 +8,21 @@ import { HomeComponent } from './home/home.component';
 import { IndexComponent } from './User/index/index.component';
 import { LoginComponent } from './User/login/login.component';
 import { RegisterComponent } from './User/register/register.component';
+import { ServiceGuard } from './Admin/service.guard';
+import { UserGuard } from './User/Guard/user.guard';
 
 const routes: Routes = [
   {path:"user/login", component:LoginComponent},
   {path:"user/register", component:RegisterComponent},
-  {path:"", component:HomeComponent},
-  {path:"user/index", component:IndexComponent},
-  
+  {path:"", component:HomeComponent,},
+  {path:"user/index", component:IndexComponent , canActivate:[UserGuard]},
+
   {path:"home", component:HomeComponent},
 
 
   {path:"admin/login", component:AdminloginComponent},
   {path:"admin/register", component:AdminregisterComponent},
-  {path:"admin/index", component:AdminindexComponent},
+  {path:"admin/index", component:AdminindexComponent , canActivate:[ServiceGuard]},
 ];
 
 @NgModule({
