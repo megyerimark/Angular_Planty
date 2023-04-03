@@ -10,31 +10,7 @@
 </head>
 <body>
 
-  <div id="container" *ngFor = 'let plant of plants' >
-    <div class="card">
-      <div class="imgBx" >
-        <img [src]='"http://localhost:8000/storage/images/"+plant.imgpath' alt=""  >
-      </div>
-      <div class="content">
-        <h1>{{plant.name}}</h1>
-        <p>{{plant.description}}</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis esse, consequuntur quisquam ratione labore doloribus quae non mollitia eos dicta.</p>
-        <a href="#">Olvass tovább</a>
-        <!-- ide jöhetne egy index az összes növényről  -->
 
-      </div>
-    </div>
-  </div>
-
-
-
-
-
-</body>
-</html>
-
-
-<!--
 
 
 
@@ -52,12 +28,42 @@
 
   <div class="button mb-3 text-center">
     <button id="button" class="btn btn-info" type="submit" >Felvétel</button>
+    <li class="nav-item">
+      <a class="nav-link "  (click)="logout()"> <h1>Kijelentkezés</h1></a>
+    </li>
+
+  </div>
+
+
+
+  <div id="container" *ngFor = 'let plant of plants' >
+    <div class="card">
+      <div class="imgBx" >
+        <img [src]='"http://localhost:8000/storage/images/"+plant.imgpath' alt=""  >
+      </div>
+      <div class="content">
+        <h1>{{plant.name}}</h1>
+        <p>{{plant.description}}</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis esse, consequuntur quisquam ratione labore doloribus quae non mollitia eos dicta.</p>
+        <a href="#">Olvass tovább</a>
+        <!-- ide jöhetne egy index az összes növényről  -->
+
+      </div>
+    </div>
   </div>
 
  </form>
-  <li class="nav-item">
-    <a class="nav-link "  (click)="logout()"> <h1>Kijelentkezés</h1></a>
-  </li>
+
+
+
+
+
+</body>
+</html>
+
+
+<!--
+
 
 
   <div class="container">
