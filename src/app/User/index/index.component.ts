@@ -23,7 +23,7 @@ export class IndexComponent implements OnInit{
     ngOnInit(): void {
        this.plantindex();
       this.plantForm = this.formBuilder.group({
-        plant_id :[],
+     
 
 
       })
@@ -37,7 +37,7 @@ export class IndexComponent implements OnInit{
 
 
      plantindex(){
-      let jsonUserData: any = localStorage.getItem('currentUser');
+      let jsonUserData: any = localStorage.getItem('currentAdmin');
       let currentUser = JSON.parse(jsonUserData);
       this.plantservic.index(currentUser.token).subscribe({
         next:res=>{

@@ -1,87 +1,92 @@
 
 
 
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-
-
-
-
-
-  <form [formGroup]="plantForm" (ngSubmit)="uploadFile()">
-    <input type="file" (change)="onFileChange($event)"  formControlName="imgpath" class="form-control">
-    <input type="text" placeholder="név" formControlName="name" class="form-control" >
-
-  <input type="text"  class="form-control" placeholder="leírás" formControlName="description">
-  <input type="text" placeholder="locsolás " formControlName="watering" class="form-control">
-  <input type="text" placeholder="hőmérséklet" formControlName="temperature" class="form-control">
-  <input type="text" placeholder="fényigény " formControlName="light_requirement" class="form-control">
-  <input type="text" placeholder="páratartalom " formControlName="humidity" class="form-control">
-  <input type="number" placeholder="szám " formControlName="heat_demand" class="form-control">
-
-
-  <div class="button mb-3 text-center">
-    <button id="button" class="btn btn-info" type="submit" >Felvétel</button>
-    <li class="nav-item">
-      <a class="nav-link "  (click)="logout()"> <h1>Kijelentkezés</h1></a>
-    </li>
-
-  </div>
-
-
-
-  <div id="container" *ngFor = 'let plant of plants' >
-    <div class="card">
-      <div class="imgBx" >
-        <img [src]='"http://localhost:8000/storage/images/"+plant.imgpath' alt=""  >
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+  
+  
+  
+  
+    <form [formGroup]="plantForm" (ngSubmit)="uploadFile()">
+      <div class="button mb-3 text-center">
+        <button id="button"  type="submit" >Felvétel</button>
       </div>
-      <div class="content">
-        <h1>{{plant.name}}</h1>
-        <p>{{plant.description}}</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis esse, consequuntur quisquam ratione labore doloribus quae non mollitia eos dicta.</p>
-        <a href="#">Olvass tovább</a>
-        <!-- ide jöhetne egy index az összes növényről  -->
-
+   
+  
+  <div class="inputcontainer">
+    <div class="im">
+      <input type="file" (change)="onFileChange($event)"  formControlName="imgpath" >
+    </div>
+       
+        <div class="name">
+          <input type="text" placeholder="név" formControlName="name"  >
+        </div>
+        <div class="desc">
+          <input type="text"  placeholder="leírás" formControlName="description">
+        </div>
+        <div class="watering">
+          <input type="text" placeholder="locsolás " formControlName="watering">
+        </div>
+      <div class="temp">
+        <input type="text" placeholder="hőmérséklet" formControlName="temperature" >
+      </div>
+      <div class="light">
+        <input type="text" placeholder="fényigény " formControlName="light_requirement" >
+      </div>
+      
+      <div class="human">
+        <input type="text" placeholder="páratartalom " formControlName="humidity" >
+      </div>
+      <div class="number">
+        <input type="number" placeholder="szám " formControlName="heat_demand" >
+      </div>
+     
+    
+  </div>
+  
+  
+      <li class="nav-item">
+        <a class="nav-link "  (click)="logout()"> <h1>Kijelentkezés</h1></a>
+      </li>
+  
+  
+  
+  
+  
+    <div id="container" *ngFor = 'let plant of plants' >
+      <div class="card">
+        <div class="imgBx" >
+          <img [src]='"http://localhost:8000/storage/images/"+plant.imgpath' alt="">
+        </div>
+        <div class="content">
+          <h1>{{plant.name}}</h1>
+          <p>{{plant.description}}</p>
+          <p> Re labore doloribus quae non mollitia eos dicta.</p>
+          <a href="#">Olvass tovább</a>
+          <!-- ide jöhetne egy index az összes növényről  -->
+  
+        </div>
       </div>
     </div>
-  </div>
-
- </form>
-
-
-
-
-
-</body>
-</html>
-
-
-<!--
-
-
-
-  <div class="container">
-    <div class="card">
-      <div class="imgBx"></div>
-      <div class="content"></div>
-    </div>
-  </div>
-
-
-
-<table *ngFor = 'let plant of plants' >
-   <img [src]='"http://localhost:8000/storage/images/"+plant.imgpath' alt="" class="form-control"></td>
-
-</table> -->
-
-
-
-
-
-
+  
+   </form>
+  
+  
+  
+  
+  
+  </body>
+  </html>
+  
+  
+  
+  
+  
+  
+  

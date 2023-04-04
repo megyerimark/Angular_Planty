@@ -19,7 +19,7 @@ body{
 #container{
 
   position: relative;
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -112,13 +112,79 @@ body{
   border-radius: 8px;
 
 }
+.inputcontainer{
+  align-items: center;
+  text-align: center;
+  position: right;
+}
 
+.inputcontainer  .name input,
+ .desc input,.watering input,
+ .temp input, .light input ,
+.human input, .number input {
+  position: relative;
+  width: 750px;
+  height: 50px;
+  margin: 30px;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+  border-radius: 10px;
+  background: rgb(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.5);
+  border-left: 1px solid rgba(255,255,255,0.5);
+  backdrop-filter: blur(5px);
+
+}
+ button {
+  background-color: #3e8e41;
+  height: 80px;
+  width: 100px;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+  border-radius: 10px;
+  background: rgb(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255,255,255,0.5);
+  border-left: 1px solid rgba(255,255,255,0.5);
+}
+
+.toggle-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.inputcontainer .im input{
+  width: 750px;
+  height: 50px;
+  margin: 30px;
+  box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+  border-radius: 10px;
+  background: rgb(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.5);
+  border-left: 1px solid rgba(255,255,255,0.5);
+  backdrop-filter: blur(5px);
+
+}
 @media screen and (max-width:1024px)
 {
-  #container{
-    width: 100vh;
-    flex-direction: column;
+  body{
     align-items: center;
+    justify-content: center;
+  
+  }
+  #container {
+    display: inline-block;
+    padding: 25px;
+    align-items: center;
+    justify-content: center;
+  }
+  button{
+    display: inline-block;
+
   }
 
 }
@@ -126,11 +192,34 @@ body{
 @media screen and (max-width:800px) {
 
   html{
-    font-size: 90%;
+    width: auto;
+
   }
-  #container .content  .card .imgBx{
-    width: 49%;
+  #container {
+    display: flex;
+    padding: 25px;
+    align-items: center;
+    justify-content: center;
   }
+  #container .card {
+    width: 75%;
+    display: flex;
+  
+  }
+  #container .card .imgBx{
+    width: 50%;
+  }
+  #container .card .imgBx img{
+    height: 25%;
+  }
+  #container .card:hover .imgBx
+{
+  top: -100px;
+  box-shadow: 0 2px 25px  rgba(0,0,0,0.2);
+}
+#container .card:hover .imgBx img{
+  height: auto;
+}
 
 }
 
